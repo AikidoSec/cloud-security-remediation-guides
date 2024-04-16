@@ -23,4 +23,4 @@
 7. Enter the "Condition, Threshold and Minute" of the above "Configuration" accordingly and click on the "Save" button to make the changes.</br> <img src="/resources/google/logging/project-ownership-logging/step11.png"/>
 8. Once the settings are "Saved", enter the name of the alarm and select "Policy triggers" condition from the dropdown menu.</br> <img src="/resources/google/logging/project-ownership-logging/step12.png"/>
 9. Click on the "Save" button at the bottom to make the changes.</br> <img src="/resources/google/logging/project-ownership-logging/step13.png"/>
-10. Repeat steps number 6 - 14 to ensure that log alerts exist for project ownership assignments and changes.</br>
+10. Repeat steps for any GCP project where this is required.
