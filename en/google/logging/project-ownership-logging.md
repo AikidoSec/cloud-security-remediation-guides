@@ -15,8 +15,8 @@
 
 ## Detailed Remediation Steps
 1. Log in to the Google Cloud Platform Console.
-2. Navigate to "Logbased metrics" under "Logging" (https://console.cloud.google.com/logs/metrics?walkthrough_id=panels--logging--query) and click on the "CREATE METRIC" button at the top.</br> <img src="/resources/google/logging/project-ownership-logging/step6.png"/>
-3. On the "Metric editor" tab, enter the "Name" and "Description" accordingly and enter the field name under the "Label" as per the requirements and click on the "Done" button to save the "Label."</br> <img src="/resources/google/logging/project-ownership-logging/step7.png"/>
+2. Navigate to "Logbased metrics" under "Logging" (https://console.cloud.google.com/logs/metrics?walkthrough_id=panels--logging--query) and click on the "CREATE METRIC" button at the top.</br>  
+3. On the "Metric editor" tab, enter the "Name" and "Description" </br> For the required filter field, enter: **resource.type=global AND (protoPayload.serviceName=cloudresourcemanager.googleapis.com) AND (ProjectOwnership OR projectOwnerInvitee) OR (protoPayload.serviceData.policyDelta.bindingDeltas.action=REMOVE AND protoPayload.serviceData.policyDelta.bindingDeltas.role=roles/owner) OR (protoPayload.serviceData.policyDelta.bindingDeltas.action=ADD AND protoPayload.serviceData.policyDelta.bindingDeltas.role=roles/owner)** </br> <img src="/resources/google/logging/project-ownership-logging/step7.png"/>
 4. Click on the "Create metric" button at the bottom to make the changes.</br> <img src="/resources/google/logging/project-ownership-logging/step8.png"/>
 5. On the "Logs-based metrics", under the "User-defined metrics" click on the 3 dots next to the newly created "Project Ownership Logging" metric and click on the "create alert from metric."</br> <img src="/resources/google/logging/project-ownership-logging/step9.png"/>
 6. On the "Create alert" page, select the "Aggregator" as per the requirement and select the "Configuration" from the dropdown menu accordingly.</br> <img src="/resources/google/logging/project-ownership-logging/step10.png"/>
